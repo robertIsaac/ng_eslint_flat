@@ -8,6 +8,13 @@
       "files": [
         "*.ts"
       ],
+      "parserOptions": {
+        "tsconfigRootDir": "projects/ui",
+        "project": [
+          "tsconfig.lib.json",
+          "tsconfig.spec.json"
+        ]
+      },
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
