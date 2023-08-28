@@ -1,34 +1,31 @@
-import rootConfig from '../../eslint.config.js'
+import rootConfig from '../../eslint.config.js';
 export default [
   ...rootConfig,
   {
-    "files": ["**/*.ts"],
+    files: ['**/*.ts'],
     languageOptions: {
-      "parserOptions": {
-        tsconfigRootDir: "projects/ui",
-        project: [
-          "tsconfig.lib.json",
-          "tsconfig.spec.json"
-        ]
+      parserOptions: {
+        tsconfigRootDir: 'projects/ui',
+        project: ['tsconfig.lib.json', 'tsconfig.spec.json'],
       },
     },
-    "rules": {
-      "@angular-eslint/directive-selector": [
-        "error",
+    rules: {
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          "type": "attribute",
-          "prefix": "lib",
-          "style": "camelCase"
-        }
+          type: 'attribute',
+          prefix: 'lib',
+          style: 'camelCase',
+        },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          "type": "element",
-          "prefix": "lib",
-          "style": "kebab-case"
-        }
-      ]
-    }
-  }
+          type: 'element',
+          prefix: 'lib',
+          style: 'kebab-case',
+        },
+      ],
+    },
+  },
 ];

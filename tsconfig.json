@@ -20,14 +20,9 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "ui": [
-        "dist/ui"
-      ]
+      "ui": ["dist/ui"]
     },
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

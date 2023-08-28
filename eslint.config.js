@@ -9,22 +9,19 @@ import esImport from 'eslint-plugin-import';
 
 export default [
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     plugins: {
       '@typescript-eslint': ts,
       '@angular-eslint': ng,
-      'import': esImport,
+      import: esImport,
     },
     languageOptions: {
       parser: tsParser,
       globals: {
-        ...globals.browser
+        ...globals.browser,
       },
       parserOptions: {
-        project: [
-          "tsconfig.app.json",
-          "tsconfig.spec.json"
-        ]
+        project: ['tsconfig.app.json', 'tsconfig.spec.json'],
       },
     },
     rules: {
@@ -33,40 +30,40 @@ export default [
       ...ts.configs['stylistic-type-checked'].rules,
       ...ng.configs.recommended.rules,
       ...esImport.configs.errors.rules,
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          "type": "attribute",
-          "prefix": "app",
-          "style": "camelCase"
-        }
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
+        },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          "type": "element",
-          "prefix": "app",
-          "style": "kebab-case"
-        }
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
+        },
       ],
-      "sort-imports": [
-        "error",
+      'sort-imports': [
+        'error',
         {
-          "ignoreDeclarationSort": true
-        }
+          ignoreDeclarationSort: true,
+        },
       ],
-      "import/no-unresolved": "off",
-      "import/newline-after-import": "error",
-      "import/order": [
-        "error",
+      'import/no-unresolved': 'off',
+      'import/newline-after-import': 'error',
+      'import/order': [
+        'error',
         {
-          "alphabetize": {"order": "asc"}
-        }
-      ]
-    }
+          alphabetize: { order: 'asc' },
+        },
+      ],
+    },
   },
   {
-    files: ["**/*.html"],
+    files: ['**/*.html'],
     plugins: {
       '@angular-eslint/template': ngTeplate,
     },
@@ -76,14 +73,14 @@ export default [
     rules: {
       ...ngTeplate.configs.recommended.rules,
       ...ngTeplate.configs.accessibility.rules,
-    }
+    },
   },
   {
-    files: ["**/*.spec.ts"],
+    files: ['**/*.spec.ts'],
     languageOptions: {
       globals: {
         ...globals.jasmine,
-      }
-    }
+      },
+    },
   },
 ];
